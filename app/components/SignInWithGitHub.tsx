@@ -25,13 +25,23 @@ export function SignInWithGitHub() {
     };
   }, [router]);
 
-  const handleLoginWithGitHub = () => {
-    supabase.auth.signInWithOAuth({
-      provider: "github",
-      options: {
-        redirectTo: `${location.origin}/auth/callback`,
-      },
-    });
+  const handleLoginWithGitHub = async () => {
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "github",
+        options: {
+          redirectTo: `${location.origin}/auth/callback`,
+        },
+      });
+      
+      if (error) {
+        console.error('GitHub sign-in error:', error);
+        // You could show a toast notification here
+      }
+    } catch (error) {
+      console.error('Failed to initiate GitHub sign-in:', error);
+      // You could show a toast notification here
+    }
   };
 
   return (

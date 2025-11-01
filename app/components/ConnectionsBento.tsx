@@ -97,7 +97,7 @@ export function ConnectionsBento({
               </svg>
               <img
                 className="absolute left-1/2 top-1/2 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 transform rounded-full"
-                src="/braydon_headshot_3.jpg"
+                src="/your-image.jpg"
                 alt=""
               />
             </div>
@@ -106,7 +106,7 @@ export function ConnectionsBento({
           <span className="hidden md:block">
             {/* Amy */}
             <AnimatedConnectionCircle
-              src="/amy_dutton.jpg"
+              src="/your-image.jpg"
               top="55%"
               left="23%"
               delay={0.1}
@@ -116,7 +116,7 @@ export function ConnectionsBento({
 
             {/* James Q Quick */}
             <AnimatedConnectionCircle
-              src="/james_q_quick.jpg"
+              src="/your-image.jpg"
               top="53%"
               left="67%"
               delay={0.3}
@@ -125,7 +125,7 @@ export function ConnectionsBento({
 
             {/* Colby */}
             <AnimatedConnectionCircle
-              src="/colby_fayock.jpg"
+              src="/your-image.jpg"
               top="4%"
               left="32%"
               delay={0.2}
@@ -135,7 +135,7 @@ export function ConnectionsBento({
 
             {/* Sarah */}
             <AnimatedConnectionCircle
-              src="/sarah_drasner.jpg"
+              src="/your-image.jpg"
               top="15%"
               left="78%"
               delay={0.4}
@@ -145,7 +145,7 @@ export function ConnectionsBento({
 
             {/* Shashi */}
             <AnimatedConnectionCircle
-              src="/shashi_lo.jpg"
+              src="/your-image.jpg"
               top="5%"
               left="7%"
               delay={0.5}
@@ -162,7 +162,7 @@ export function ConnectionsBento({
             >
               <img
                 className="rounded-full"
-                src="/shashi_lo.jpg"
+                src="/your-image.jpg"
                 alt="Connection"
               />
             </ConnectionCircle>
@@ -172,7 +172,7 @@ export function ConnectionsBento({
             >
               <img
                 className="rounded-full"
-                src="/amy_dutton.jpg"
+                src="/your-image.jpg"
                 alt="Connection"
               />
             </ConnectionCircle>
@@ -182,7 +182,7 @@ export function ConnectionsBento({
             >
               <img
                 className="rounded-full"
-                src="/james_q_quick.jpg"
+                src="/your-image.jpg"
                 alt="Connection"
               />
             </ConnectionCircle>
@@ -192,7 +192,7 @@ export function ConnectionsBento({
             >
               <img
                 className="rounded-full"
-                src="/colby_fayock.jpg"
+                src="/your-image.jpg"
                 alt="Connection"
               />
             </ConnectionCircle>

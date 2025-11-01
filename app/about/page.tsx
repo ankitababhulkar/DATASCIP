@@ -18,7 +18,7 @@ export default function AboutPage() {
 
   return (
     <div className="relative mt-14">
-      <title>About | Braydon Coyer</title>
+      <title>About | Teja Chakilam</title>
       <div className="relative space-y-10 md:space-y-16">
         {/* Title */}
         <GridWrapper className="space-y-12">
@@ -28,7 +28,7 @@ export default function AboutPage() {
                 <span>{timeOfDayGreeting}</span>
               </div>
               <h1 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-5xl lg:text-left lg:text-6xl lg:leading-[64px]">
-                I&apos;m Braydon, a creative frontend engineer.
+                I&apos;m Teja, a creative Data Scientist
               </h1>
             </div>
             <div className="order-1 my-12 flex-shrink-0 lg:order-2 lg:my-0">
@@ -38,7 +38,7 @@ export default function AboutPage() {
                     <Photo
                       width={140}
                       height={140}
-                      src="/braydon_speaking_photo.jpeg"
+                      src="/your-image.jpeg"
                       alt="Braydon Coyer"
                       direction="left"
                     />
@@ -47,7 +47,7 @@ export default function AboutPage() {
                     <Photo
                       width={140}
                       height={140}
-                      src="/braydon_headshot_1.jpeg"
+                      src="/your-image.jpeg"
                       alt="Braydon Coyer"
                       direction="right"
                     />
@@ -56,7 +56,7 @@ export default function AboutPage() {
                     <Photo
                       width={140}
                       height={140}
-                      src="/braydon_headshot_3.jpg"
+                      src="/your-image.jpg"
                       alt="Braydon Coyer"
                       direction="left"
                     />
@@ -104,15 +104,15 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
-                  My programming origins
+                  My Data Science Origins
                 </h2>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  When Apple unveiled the first iPad with its beautiful 1024x768
-                  display, I knew I had to create for it. I taught myself mobile
-                  development while freelancing, and soon I was shipping iOS and
-                  Android apps. One of my games even climbed above Angry Birds
-                  in the charts for a while—which still makes me smile when I
-                  think about it.
+                  When I first explored how AI could transform business decisions,
+                  I knew I had found my purpose. I started experimenting with data
+                  models while working in analytics soon I was building intelligent
+                  systems that learned, adapted, and solved real-world problems.
+                  My first few projects in Generative AI and MLOps ignited that
+                  spark and I’ve been hooked on innovation ever since.
                 </p>
               </div>
               <div className="hidden lg:order-1 lg:block">
@@ -141,15 +141,15 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
-                  Finding My Way to Web
+                  My Journey Into the World of AI
                 </h2>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  Despite my love for mobile development, the web kept calling
-                  my name. With my eye for design, frontend felt like the
-                  perfect playground. I dove into HTML, CSS, and JavaScript—with
-                  React in 2016 becoming my game-changer. A few months later and
-                  I had landed my first full-time web dev role and never looked
-                  back.
+                  Despite starting my journey in business and analytics,
+                  the world of AI kept calling my name. With my curiosity
+                  for data and innovation, machine learning became my perfect
+                  playground. I dove deep into Python, SQL, and neural networks
+                  discovering Generative AI as my true game-changer. Since then,
+                  I’ve been building intelligent systems and never looked back.
                 </p>
               </div>
               <div className="hidden lg:block">
@@ -157,7 +157,7 @@ export default function AboutPage() {
                   <ShadowBox width={188} height={278}></ShadowBox>
                   <img
                     className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg object-cover shadow"
-                    src="/braydon_headshot_3.jpg"
+                    src="/your-image.jpg"
                     alt="Speaking at C3 Conf!"
                   />
                 </div>
@@ -223,17 +223,16 @@ export default function AboutPage() {
                   These Days
                 </h2>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  Currently, I&apos;m leading teams at LogicGate as a Senior
-                  Frontend Engineer where we&apos;re building some pretty
-                  awesome stuff. Speaking at tech conferences has become a
-                  regular part of my year.
+                  Currently, I’m leading AI initiatives as a Senior
+                  Data Scientist,building intelligent, data-driven
+                  systems that power real-world solutions. Exploring
+                  Generative AI and MLOps has become an exciting part of my journey!
                 </p>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  When I&apos;m not working, you&apos;ll find me on creative
-                  coding side projects, writing for my blog, failing
-                  spectacularly at games with friends, or—best of all—hanging
-                  out with my family, usually with coffee nearby and dad jokes
-                  at the ready.
+                  When I’m not diving into AI experiments, you’ll
+                  find me exploring creative coding projects, writing
+                  about emerging tech, or brainstorming new ideas over
+                  a cup of coffee always learning, always building.
                 </p>
               </div>
               <div className="hidden lg:block">
@@ -241,7 +240,7 @@ export default function AboutPage() {
                   <ShadowBox width={188} height={278}></ShadowBox>
                   <img
                     className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg object-cover shadow"
-                    src="/braydon_speaking_photo.jpeg"
+                    src="/your-image.jpeg"
                     alt="A headshot"
                   />
                 </div>

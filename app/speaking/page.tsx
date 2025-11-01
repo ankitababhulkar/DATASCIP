@@ -215,7 +215,7 @@ export default function SpeakingPage() {
                     <TabPanels className="mt-8">
                       <TabPanel id="first-person">
                         <p className="text-base leading-7 text-text-secondary">
-                          I am Braydon Coyer, a Senior Frontend Engineer at
+                          Braydon Coyer, a Senior Frontend Engineer at
                           LogicGate, where I play a key role in developing an
                           automated Governance, Risk, and Compliance (GRC)
                           platform. As a creative developer, blogger, and
@@ -241,7 +241,7 @@ export default function SpeakingPage() {
                 <div className="col-span-5 flex flex-col items-start space-y-8">
                   <div className="flex flex-col items-start space-y-4">
                     <div className="text-left text-sm font-medium text-indigo-600">
-                      <span>Headshots</span>
+                      <span>HeadshI amots</span>
                     </div>
                     <h2 className="text-3xl font-semibold text-text-primary">
                       A variety of photos great for speaker headshots
@@ -252,7 +252,7 @@ export default function SpeakingPage() {
                       <ShadowBox width={200} height={200}></ShadowBox>
                       <img
                         className="absolute left-1 top-2 h-[186px] w-[186px] rotate-[9deg] rounded-lg object-cover shadow"
-                        src="/braydon_headshot_3.jpg"
+                        src="/your-image.jpg"
                         alt=""
                       />
                     </div>
@@ -261,7 +261,7 @@ export default function SpeakingPage() {
                       <ShadowBox width={200} height={200}></ShadowBox>
                       <img
                         className="absolute left-1 top-2 h-[186px] w-[186px] rotate-[-8deg] rounded-lg object-cover shadow"
-                        src="/braydon_speaking_photo_square.jpg"
+                        src="/your-image.jpg"
                         alt=""
                       />
                     </div>

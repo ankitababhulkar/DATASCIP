@@ -4,60 +4,55 @@ import { Timeline } from "./Timeline";
 const resumeData: ResumeData = {
   experiences: [
     {
-      company: "LogicGate",
-      period: "2022 - Present",
+      company: "Huntington National Bank",
+      period: "Jan 2023 – May 2025",
       positions: [
         {
-          title: "Frontend Developer III",
+          title: "Generative AI Engineer",
           description: [
-            "I lead feature development on a team by analyzing requirements, designing solutions, and assist in evolving the frontend chapter of our organization.",
+            "I led AI-driven projects focusing on Generative AI models for financial data processing and automation. My role included developing intelligent systems leveraging NLP and LLMs, optimizing data pipelines, and integrating AI solutions into existing enterprise frameworks to enhance decision-making and customer experience.",
           ],
         },
+        // {
+        //   title: "Frontend Developer II",
+        //   description: [
+        //     "I joined LogicGate and immediately took charge of feature development on my team while also assisting other frontend developers in the organization.",
+        //   ],
+        // },
+      ],
+    },
+    {
+      company: "Evernorth Health Services",
+      period: "Mar 2022 – Dec 2022",
+      positions: [
         {
-          title: "Frontend Developer II",
+          title: "Data Scientist",
           description: [
-            "I joined LogicGate and immediately took charge of feature development on my team while also assisting other frontend developers in the organization.",
+            "I developed predictive models and machine learning algorithms for healthcare analytics, focusing on patient outcomes, claims data, and operational optimization. I collaborated with cross-functional teams to design data solutions that improved performance and accuracy, utilizing technologies such as Python, SQL, and AWS for end-to-end ML deployment.",
           ],
         },
       ],
     },
     {
-      company: "Cognizant",
-      period: "2019 - 2021",
+      company: "HDFC Life",
+      period: "Jan 2020 – Jul 2021",
       positions: [
         {
-          title: "Senior Fullstack Developer",
+          title: "Data Scientist",
           description: [
-            "I designed and developed full-stack RESTful microservices using Netflix OSS, Java, Spring Boot, SQL, Angular, React, and Vue.",
-            "I led development teams, utilizing extreme programming principles such as agile, test-driven development, and paired programming.",
-            "I spearheaded the information architecture and developed a reusable UI component library for healthcare clients.",
-            "I led over 650 developers through a monthly enablement process, training them for client work on the Digital Engineering stack.",
+            "I built and deployed data-driven models to enhance customer insights and automate policy-related analytics. My work involved analyzing large-scale datasets, identifying business trends, and supporting strategic decisions through AI and statistical techniques. I collaborated with business teams to implement data pipelines and model monitoring workflows.",
           ],
         },
       ],
     },
     {
-      company: "projekt202",
-      period: "2018 - 2019",
+      company: "Flipkart",
+      period: "Jun 2019 – Dec 2019",
       positions: [
         {
-          title: "UI Developer",
+          title: "Python Developerr",
           description: [
-            "I assisted in developing a reusable UI component library and worked closely with a multi-million dollar airline client to gather requirements.",
-            "My responsibility included developing solutions for enterprise clients worth millions of dollars, using Angular 7 for the frontend.",
-          ],
-        },
-      ],
-    },
-    {
-      company: "Major 4 Apps",
-      period: "2018 - 2019",
-      positions: [
-        {
-          title: "Founder & Developer",
-          description: [
-            "I developed custom applications for clients, designed, developed, tested, and supported mobile applications on iOS and Android platforms.",
-            "My mobile game ranked among the top 200 on the Amazon App Store.",
+            "I contributed to the development of backend data processing modules using Python and AWS. I focused on automating data ingestion workflows and optimizing the scalability of internal systems. Collaborated closely with the analytics team to support business intelligence and reporting initiatives.",
           ],
         },
       ],

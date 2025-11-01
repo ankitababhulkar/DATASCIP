@@ -10,10 +10,10 @@ export function ProfilePicture() {
   const changeImage = () => {
     setIsChanging(true);
     const images = [
-      "/braydon_headshot_1.jpeg",
-      "/braydon_headshot_3.jpg",
-      "/braydon_speaking_photo.jpeg",
-      "/braydon_headshot_4.jpg",
+      "/your-image.jpeg",
+      "/your-image.jpg",
+      "/your-image.jpeg",
+      "/your-image.jpg",
     ];
     const availableImages = images.filter((img) => img !== imageSrc);
     const randomIndex = Math.floor(Math.random() * availableImages.length);

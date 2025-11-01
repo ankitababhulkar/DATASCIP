@@ -7,38 +7,62 @@ import { SignInWithGitHub } from "./SignInWithGitHub";
 async function handleCreateCommunityNote(formData: FormData) {
   "use server";
 
-  const message = formData.get("message") as string;
-  const patternIndex = parseInt(formData.get("patternIndex") as string);
-  const rotation = parseInt(formData.get("rotation") as string);
+  try {
+    const message = formData.get("message") as string;
+    const patternIndex = parseInt(formData.get("patternIndex") as string);
+    const rotation = parseInt(formData.get("rotation") as string);
 
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+    const supabase = await createSupabaseServerClient();
+    const { data: { user }, error: userError } = await supabase.auth.getUser();
 
-  if (!user) return;
+    if (userError) {
+      console.error('Failed to get user:', userError);
+      return;
+    }
 
-  const newNote = {
-    message,
-    patternindex: patternIndex,
-    rotation: rotation,
-    user_id: user.id,
-    creator_name: user.user_metadata.full_name,
-    creator_avatar_url: user.user_metadata.avatar_url,
-  };
+    if (!user) {
+      console.warn('No authenticated user found');
+      return;
+    }
 
-  const { error } = await supabase.from("messages").insert(newNote).select();
+    const newNote = {
+      message,
+      patternindex: patternIndex,
+      rotation: rotation,
+      user_id: user.id,
+      creator_name: user.user_metadata?.full_name || 'Anonymous',
+      creator_avatar_url: user.user_metadata?.avatar_url || '',
+    };
 
-  if (!error) {
+    const { error } = await supabase.from("messages").insert(newNote).select();
+
+    if (error) {
+      console.error('Failed to create community note:', error);
+      return;
+    }
+
     redirect("/community-wall");
+  } catch (error) {
+    console.error('Error in handleCreateCommunityNote:', error);
+    // Don't redirect on error to prevent blocking UI
   }
 }
 
 export async function CommunityWallModal() {
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user = null;
+  
+  try {
+    const supabase = await createSupabaseServerClient();
+    const { data: { user: authUser }, error } = await supabase.auth.getUser();
+    
+    if (error) {
+      console.warn('Failed to get user in CommunityWallModal:', error);
+    } else {
+      user = authUser;
+    }
+  } catch (error) {
+    console.error('Error in CommunityWallModal:', error);
+  }
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/70">
@@ -48,8 +72,8 @@ export async function CommunityWallModal() {
         ) : (
           <CreateCommunityNoteBuilder
             onSubmit={handleCreateCommunityNote}
-            creator_name={user.user_metadata.full_name}
-            creator_avatar_url={user.user_metadata.avatar_url}
+            creator_name={user.user_metadata?.full_name || 'Anonymous'}
+            creator_avatar_url={user.user_metadata?.avatar_url || ''}
           />
         )}
       </div>

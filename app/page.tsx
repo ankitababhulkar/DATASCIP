@@ -1,7 +1,6 @@
 import { BgGradient } from "./components/BgGradient";
 import { NewsletterSignUp } from "./components/NewsletterSignUp";
 import { ChangelogBento } from "./components/ChangelogBento";
-import { fetchAndSortBlogPosts } from "./lib/utils";
 import { SpeakingBento } from "./components/SpeakingBento";
 import { CommunityWallBento } from "./components/CommunityWallBento";
 import { CalendarBento } from "./components/CalendarBento";
@@ -16,9 +15,58 @@ import { AnimatedMobilePhotos } from "./components/AnimatedMobilePhotos";
 import { GridWrapper } from "./components/GridWrapper";
 import clsx from "clsx";
 
-export default async function Home() {
-  const allPublishedBlogPosts = await fetchAndSortBlogPosts();
-  const featuredArticles = allPublishedBlogPosts.slice(0, 4);
+type Blog = {
+  code: string;
+  summary: string;
+  title: string;
+  publishedAt: string;
+  imageName: string;
+  categories: string[];
+  slug: string;
+  draft: boolean;
+  canonicalUrl?: string | undefined;
+  audioFile?: string | undefined;
+};
+
+export default function Home() {
+  const featuredArticles: Blog[] = [
+    {
+      code: "# Building AI-Powered Data Pipelines\n\nLearn how to create efficient data pipelines using modern AI tools and techniques.",
+      summary: "A comprehensive guide to building scalable AI-powered data pipelines that can handle large datasets and complex transformations.",
+      title: "Building AI-Powered Data Pipelines",
+      publishedAt: "2024-10-15",
+      imageName: "ai-data-pipelines.jpg",
+      categories: ["AI", "Data Engineering", "Machine Learning"],
+      slug: "building-ai-powered-data-pipelines",
+      draft: false,
+      canonicalUrl: undefined,
+      audioFile: undefined
+    },
+    {
+      code: "# The Future of Generative AI\n\nExploring the latest trends and developments in generative artificial intelligence.",
+      summary: "Dive deep into the cutting-edge world of generative AI and discover what the future holds for this revolutionary technology.",
+      title: "The Future of Generative AI",
+      publishedAt: "2024-10-10",
+      imageName: "generative-ai-future.jpg",
+      categories: ["Generative AI", "Technology", "Innovation"],
+      slug: "future-of-generative-ai",
+      draft: false,
+      canonicalUrl: undefined,
+      audioFile: undefined
+    },
+    {
+      code: "# Data Science Best Practices\n\nEssential practices every data scientist should follow for successful projects.",
+      summary: "Master the fundamental best practices that separate successful data science projects from failed ones.",
+      title: "Data Science Best Practices",
+      publishedAt: "2024-10-05",
+      imageName: "data-science-practices.jpg",
+      categories: ["Data Science", "Best Practices", "Analytics"],
+      slug: "data-science-best-practices",
+      draft: false,
+      canonicalUrl: undefined,
+      audioFile: undefined
+    }
+  ];
 
   const PROFILE_DELAY = 0;
   const HEADING_DELAY = PROFILE_DELAY + 0.2;
@@ -37,8 +85,8 @@ export default async function Home() {
                 delay={HEADING_DELAY}
                 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]"
               >
-                Hey, I&apos;m Braydon! <br /> Welcome to my corner of the
-                internet!
+                Hey, I'm Teja!
+                <br /> Welcome to my AI world where Data meets Generative Intelligence!
               </AnimatedText>
             </GridWrapper>
             <GridWrapper>
@@ -48,10 +96,7 @@ export default async function Home() {
                   delay={PARAGRAPH_DELAY}
                   className="leading-8 text-text-secondary"
                 >
-                  I&apos;m a front-end developer with a love for design and a
-                  knack for tinkering. This site is intentionally
-                  over-engineered and serves as my playground for experimenting
-                  with new ideas and seeing what sticks!
+                  I’m a Data Scientist and AI/ML Engineer passionate about building impactful, intelligent systems. My work blends data, design, and curiosity this space is my playground for experimenting with ideas that push AI forward!
                 </AnimatedText>
               </div>
             </GridWrapper>

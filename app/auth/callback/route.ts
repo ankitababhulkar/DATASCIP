@@ -9,32 +9,54 @@ export async function GET(request: Request) {
   const next = searchParams.get("next") ?? "/community-wall?show=true";
 
   if (code) {
-    const cookieStore = await cookies();
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON!,
-      {
-        cookies: {
-          get(name: string) {
-            return cookieStore.get(name)?.value ?? "";
-          },
-          set(name: string, value: string, options: CookieOptions) {
-            cookieStore.set({ name, value, ...options });
-          },
-          remove(name: string, options: CookieOptions) {
-            cookieStore.delete({ name, ...options });
+    try {
+      const cookieStore = await cookies();
+      const supabase = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON!,
+        {
+          cookies: {
+            get(name: string) {
+              return cookieStore.get(name)?.value ?? "";
+            },
+            set(name: string, value: string, options: CookieOptions) {
+              try {
+                cookieStore.set({ name, value, ...options });
+              } catch (error) {
+                console.warn('Failed to set cookie in auth callback:', error);
+              }
+            },
+            remove(name: string, options: CookieOptions) {
+              try {
+                cookieStore.delete({ name, ...options });
+              } catch (error) {
+                console.warn('Failed to remove cookie in auth callback:', error);
+              }
+            },
           },
         },
-      },
-    );
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) {
+      );
+      
+      const { error } = await supabase.auth.exchangeCodeForSession(code);
+      
+      if (error) {
+        console.error('Failed to exchange code for session:', error);
+        return NextResponse.redirect(
+          `${origin}/community-wall?message=Authentication failed`,
+        );
+      }
+      
       return NextResponse.redirect(`${origin}${next}`);
+    } catch (error) {
+      console.error('Error in auth callback:', error);
+      return NextResponse.redirect(
+        `${origin}/community-wall?message=Authentication error`,
+      );
     }
   }
 
   // return the user to an error page with instructions
   return NextResponse.redirect(
-    `${origin}/login?message=Could not login with provider`,
+    `${origin}/community-wall?message=No authorization code provided`,
   );
 }
