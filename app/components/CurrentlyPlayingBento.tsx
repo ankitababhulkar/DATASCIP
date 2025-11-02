@@ -48,43 +48,16 @@ export function CurrentlyPlayingBento() {
       <div className="flex flex-col">
         <div className="z-10 h-full">
           <div className="flex h-full flex-col justify-between">
-            <h2 className="mb-2 text-base font-medium">
-              {isCurrentlyPlaying ? "Currently Playing" : "Recent Favorite"}
-            </h2>
-            <p className="max-h-[150px] overflow-hidden text-base text-text-secondary">
-              <span className="line-clamp-4 text-ellipsis">
-                I&apos;m listening to{" "}
-                <a className="font-semibold" href={currentTrack.songUrl}>
-                  {currentTrack.title}
-                </a>{" "}
-                by{" "}
-                <a
-                  className="font-semibold"
-                  href={`https://open.spotify.com/artist/${currentTrack.artistId}`}
-                >
-                  {currentTrack.artist}
-                </a>{" "}
-                from the album{" "}
-                <a
-                  className="font-semibold"
-                  href={`https://open.spotify.com/album/${currentTrack.albumId}`}
-                >
-                  {currentTrack.albumName}
-                </a>
-              </span>
-            </p>
+
           </div>
-          <div className="user-select-none pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 transition-all duration-300 group-hover:-bottom-1">
+          {/* <div className="user-select-none pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 transition-all duration-300 group-hover:-bottom-1">
             <Record
               albumImageUrl={currentTrack.albumImageUrl}
               isPlaying={isCurrentlyPlaying}
             />
-          </div>
+          </div> */}
           <div className="absolute -bottom-32 left-1/2 -translate-x-1/2">
-            <div
-              className="h-[210px] w-[210px] rounded-sm bg-cover bg-center shadow-md"
-              style={{ backgroundImage: `url(${currentTrack.albumImageUrl})` }}
-            ></div>
+
           </div>
         </div>
         <span className="absolute -bottom-32 left-1/2 -translate-x-1/2">
@@ -269,9 +242,8 @@ function RecordPlayer({
     <div>
       {/* Record */}
       <div
-        className={`flex h-28 w-28 items-center justify-center rounded-full bg-dark-primary shadow-md ring-1 ring-inset ring-[#6C6D70] ${
-          isPlaying ? "animate-spin-slow" : ""
-        }`}
+        className={`flex h-28 w-28 items-center justify-center rounded-full bg-dark-primary shadow-md ring-1 ring-inset ring-[#6C6D70] ${isPlaying ? "animate-spin-slow" : ""
+          }`}
       >
         {/* Album Cover */}
         <div

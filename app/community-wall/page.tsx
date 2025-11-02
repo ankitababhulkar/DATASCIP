@@ -24,7 +24,7 @@ export default async function Page({ searchParams }: SearchParamProps) {
 
   return (
     <>
-      <title>Community Wall | Braydon Coyer</title>
+      <title>Research | Teja </title>
       {show ? <CommunityWallModal /> : null}
 
       {/* Page Header */}
@@ -33,14 +33,13 @@ export default async function Page({ searchParams }: SearchParamProps) {
           <div className="space-y-6">
             <div className="space-y-3">
               <h1 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]">
-                Community Wall
+                Research
               </h1>
               <p className="mx-auto max-w-2xl text-center text-lg text-text-secondary">
                 Leave a message, share your thoughts, or just say hello.
               </p>
               <p className="mx-auto hidden max-w-2xl text-center text-lg text-text-secondary md:block">
-                Click and drag to explore all the messages scattered across the
-                canvas.
+                Featuring case studies, experiments, and data stories.
               </p>
             </div>
             {/* Desktop Add Button */}

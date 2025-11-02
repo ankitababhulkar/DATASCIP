@@ -35,31 +35,29 @@ export default function AboutPage() {
               <div className="relative mx-auto w-full max-w-[400px]">
                 <div className="relative grid grid-cols-3">
                   <div className="relative z-20 -translate-y-2">
-                    <Photo
-                      width={140}
-                      height={140}
-                      src="/your-image.jpeg"
-                      alt="Braydon Coyer"
-                      direction="left"
-                    />
+                    <div className="w-[140px] h-[140px] rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700 flex items-center justify-center shadow-lg">
+                      <div className="text-white text-center">
+                        <div className="text-2xl mb-1">📊</div>
+                        <div className="text-xs font-semibold">Data Viz</div>
+                      </div>
+                    </div>
                   </div>
                   <div className="relative z-30">
                     <Photo
                       width={140}
                       height={140}
-                      src="/your-image.jpeg"
-                      alt="Braydon Coyer"
+                      src="/your-image.jpg"
+                      alt="Teja chakilam"
                       direction="right"
                     />
                   </div>
                   <div className="relative z-20 translate-y-4">
-                    <Photo
-                      width={140}
-                      height={140}
-                      src="/your-image.jpg"
-                      alt="Braydon Coyer"
-                      direction="left"
-                    />
+                    <div className="w-[140px] h-[140px] rounded-full bg-gradient-to-br from-green-500 via-teal-600 to-cyan-700 flex items-center justify-center shadow-lg">
+                      <div className="text-white text-center">
+                        <div className="text-2xl mb-1">🤖</div>
+                        <div className="text-xs font-semibold">AI/ML</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -96,11 +94,18 @@ export default function AboutPage() {
                 <div className="mb-8 lg:hidden">
                   <div className="relative mx-auto w-fit">
                     <ShadowBox width={188} height={278}></ShadowBox>
-                    <img
-                      className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[-8deg] rounded-lg object-cover shadow"
-                      src="/knights_kwest.jpeg"
-                      alt="A headshot"
-                    />
+                    <div className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[-8deg] rounded-lg shadow bg-gradient-to-br from-slate-800 via-gray-900 to-black flex flex-col justify-center items-center text-white p-4">
+                      <div className="text-4xl mb-4">💻</div>
+                      <div className="text-center">
+                        <div className="text-sm font-bold mb-2">Data Science</div>
+                        <div className="text-xs opacity-80">Python • SQL • ML</div>
+                        <div className="mt-4 space-y-1">
+                          <div className="h-1 bg-blue-400 rounded w-full"></div>
+                          <div className="h-1 bg-green-400 rounded w-3/4"></div>
+                          <div className="h-1 bg-purple-400 rounded w-1/2"></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
@@ -118,11 +123,18 @@ export default function AboutPage() {
               <div className="hidden lg:order-1 lg:block">
                 <div className="relative mx-auto w-fit">
                   <ShadowBox width={188} height={278}></ShadowBox>
-                  <img
-                    className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[-8deg] rounded-lg object-cover shadow"
-                    src="/knights_kwest.jpeg"
-                    alt="A headshot"
-                  />
+                  <div className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[-8deg] rounded-lg shadow bg-gradient-to-br from-slate-800 via-gray-900 to-black flex flex-col justify-center items-center text-white p-4">
+                    <div className="text-4xl mb-4">💻</div>
+                    <div className="text-center">
+                      <div className="text-sm font-bold mb-2">Data Science</div>
+                      <div className="text-xs opacity-80">Python • SQL • ML</div>
+                      <div className="mt-4 space-y-1">
+                        <div className="h-1 bg-blue-400 rounded w-full"></div>
+                        <div className="h-1 bg-green-400 rounded w-3/4"></div>
+                        <div className="h-1 bg-purple-400 rounded w-1/2"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -133,11 +145,24 @@ export default function AboutPage() {
                 <div className="mb-8 lg:hidden">
                   <div className="relative mx-auto w-fit">
                     <ShadowBox width={188} height={278}></ShadowBox>
-                    <img
-                      className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg object-cover shadow"
-                      src="/c3_speaker_head.png"
-                      alt="Speaking at C3 Conf!"
-                    />
+                    <div className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg shadow bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-800 flex flex-col justify-center items-center text-white p-4">
+                      <div className="text-4xl mb-4">🧠</div>
+                      <div className="text-center">
+                        <div className="text-sm font-bold mb-2">Machine Learning</div>
+                        <div className="text-xs opacity-80">Neural Networks</div>
+                        <div className="mt-4 grid grid-cols-3 gap-1">
+                          <div className="h-2 w-2 bg-white rounded-full opacity-60"></div>
+                          <div className="h-2 w-2 bg-white rounded-full opacity-80"></div>
+                          <div className="h-2 w-2 bg-white rounded-full opacity-60"></div>
+                          <div className="h-2 w-2 bg-white rounded-full opacity-40"></div>
+                          <div className="h-2 w-2 bg-white rounded-full opacity-100"></div>
+                          <div className="h-2 w-2 bg-white rounded-full opacity-40"></div>
+                          <div className="h-2 w-2 bg-white rounded-full opacity-60"></div>
+                          <div className="h-2 w-2 bg-white rounded-full opacity-80"></div>
+                          <div className="h-2 w-2 bg-white rounded-full opacity-60"></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
@@ -155,11 +180,24 @@ export default function AboutPage() {
               <div className="hidden lg:block">
                 <div className="relative mx-auto w-fit">
                   <ShadowBox width={188} height={278}></ShadowBox>
-                  <img
-                    className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg object-cover shadow"
-                    src="/your-image.jpg"
-                    alt="Speaking at C3 Conf!"
-                  />
+                  <div className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg shadow bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-800 flex flex-col justify-center items-center text-white p-4">
+                    <div className="text-4xl mb-4">🧠</div>
+                    <div className="text-center">
+                      <div className="text-sm font-bold mb-2">Machine Learning</div>
+                      <div className="text-xs opacity-80">Neural Networks</div>
+                      <div className="mt-4 grid grid-cols-3 gap-1">
+                        <div className="h-2 w-2 bg-white rounded-full opacity-60"></div>
+                        <div className="h-2 w-2 bg-white rounded-full opacity-80"></div>
+                        <div className="h-2 w-2 bg-white rounded-full opacity-60"></div>
+                        <div className="h-2 w-2 bg-white rounded-full opacity-40"></div>
+                        <div className="h-2 w-2 bg-white rounded-full opacity-100"></div>
+                        <div className="h-2 w-2 bg-white rounded-full opacity-40"></div>
+                        <div className="h-2 w-2 bg-white rounded-full opacity-60"></div>
+                        <div className="h-2 w-2 bg-white rounded-full opacity-80"></div>
+                        <div className="h-2 w-2 bg-white rounded-full opacity-60"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -170,38 +208,58 @@ export default function AboutPage() {
                 <div className="mb-8 lg:hidden">
                   <div className="relative mx-auto w-fit">
                     <ShadowBox width={188} height={278}></ShadowBox>
-                    <img
-                      className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[-8deg] rounded-lg object-cover shadow"
-                      src="/braydon_and_pj.jpeg"
-                      alt="A headshot"
-                    />
+                    <div className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[-8deg] rounded-lg shadow bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-800 flex flex-col justify-center items-center text-white p-4">
+                      <div className="text-4xl mb-4">📈</div>
+                      <div className="text-center">
+                        <div className="text-sm font-bold mb-2">Data Analytics</div>
+                        <div className="text-xs opacity-80">Insights & Patterns</div>
+                        <div className="mt-4 flex justify-center space-x-1">
+                          <div className="w-1 bg-white rounded-full" style={{ height: '20px' }}></div>
+                          <div className="w-1 bg-white rounded-full" style={{ height: '35px' }}></div>
+                          <div className="w-1 bg-white rounded-full" style={{ height: '15px' }}></div>
+                          <div className="w-1 bg-white rounded-full" style={{ height: '40px' }}></div>
+                          <div className="w-1 bg-white rounded-full" style={{ height: '25px' }}></div>
+                          <div className="w-1 bg-white rounded-full" style={{ height: '45px' }}></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
-                  Life Beyond Code
+                  Life Beyond Data
                 </h2>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  When I met PeggyJean, I knew pretty quickly she was the one.
-                  After proposing, we had grand wedding plans – until COVID
-                  happened. We pivoted (developer joke!) and had a small,
-                  intimate ceremony in 2020 that turned out more perfect than we
-                  could have imagined.
+                  When I discovered the world of Data Science, I realized I’d
+                  found my true passion. Every dataset tells a story, and
+                  uncovering hidden patterns became my way of understanding
+                  how the world works.
                 </p>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  Family has always been my center, and seeing ours grow has
-                  been life&apos;s greatest joy. Our daughter ElizaJane arrived
-                  in 2021, bringing endless wonder to our days, and little Renny
-                  joined our crew in 2023, completing our circle.
+                  Outside of analytics and algorithms, I’m constantly learning
+                  and exploring new ways AI can create real-world impact.
+                  From mentoring aspiring data professionals to working on
+                  social data projects, I’ve learned that growth happens
+                  when knowledge is shared.
                 </p>
               </div>
               <div className="hidden lg:block">
                 <div className="relative mx-auto w-fit">
                   <ShadowBox width={188} height={278}></ShadowBox>
-                  <img
-                    className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[-8deg] rounded-lg object-cover shadow"
-                    src="/braydon_and_pj.jpeg"
-                    alt="A headshot"
-                  />
+                  <div className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[-8deg] rounded-lg shadow bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-800 flex flex-col justify-center items-center text-white p-4">
+                    <div className="text-4xl mb-4">📈</div>
+                    <div className="text-center">
+                      <div className="text-sm font-bold mb-2">Data Analytics</div>
+                      <div className="text-xs opacity-80">Insights & Patterns</div>
+                      <div className="mt-4 flex justify-center space-x-1">
+                        <div className="w-1 bg-white rounded-full" style={{ height: '20px' }}></div>
+                        <div className="w-1 bg-white rounded-full" style={{ height: '35px' }}></div>
+                        <div className="w-1 bg-white rounded-full" style={{ height: '15px' }}></div>
+                        <div className="w-1 bg-white rounded-full" style={{ height: '40px' }}></div>
+                        <div className="w-1 bg-white rounded-full" style={{ height: '25px' }}></div>
+                        <div className="w-1 bg-white rounded-full" style={{ height: '45px' }}></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -212,11 +270,29 @@ export default function AboutPage() {
                 <div className="mb-8 lg:hidden">
                   <div className="relative mx-auto w-fit">
                     <ShadowBox width={188} height={278}></ShadowBox>
-                    <img
-                      className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg object-cover shadow"
-                      src="/braydon_speaking_photo.jpeg"
-                      alt="A headshot"
-                    />
+                    <div className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg shadow bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-800 flex flex-col justify-center items-center text-white p-4">
+                      <div className="text-4xl mb-4">⚡</div>
+                      <div className="text-center">
+                        <div className="text-sm font-bold mb-2">AI Innovation</div>
+                        <div className="text-xs opacity-80">Future Tech</div>
+                        <div className="mt-4 space-y-2">
+                          <div className="flex space-x-1">
+                            <div className="h-1 w-4 bg-white rounded opacity-80"></div>
+                            <div className="h-1 w-2 bg-white rounded opacity-60"></div>
+                            <div className="h-1 w-6 bg-white rounded opacity-90"></div>
+                          </div>
+                          <div className="flex space-x-1">
+                            <div className="h-1 w-3 bg-white rounded opacity-70"></div>
+                            <div className="h-1 w-5 bg-white rounded opacity-85"></div>
+                            <div className="h-1 w-2 bg-white rounded opacity-60"></div>
+                          </div>
+                          <div className="flex space-x-1">
+                            <div className="h-1 w-6 bg-white rounded opacity-90"></div>
+                            <div className="h-1 w-3 bg-white rounded opacity-70"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <h2 className="mb-6 w-full text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
@@ -238,11 +314,29 @@ export default function AboutPage() {
               <div className="hidden lg:block">
                 <div className="relative mx-auto w-fit">
                   <ShadowBox width={188} height={278}></ShadowBox>
-                  <img
-                    className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg object-cover shadow"
-                    src="/your-image.jpeg"
-                    alt="A headshot"
-                  />
+                  <div className="absolute left-0 top-0 h-[270px] w-[180px] rotate-[8deg] rounded-lg shadow bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-800 flex flex-col justify-center items-center text-white p-4">
+                    <div className="text-4xl mb-4">⚡</div>
+                    <div className="text-center">
+                      <div className="text-sm font-bold mb-2">AI Innovation</div>
+                      <div className="text-xs opacity-80">Future Tech</div>
+                      <div className="mt-4 space-y-2">
+                        <div className="flex space-x-1">
+                          <div className="h-1 w-4 bg-white rounded opacity-80"></div>
+                          <div className="h-1 w-2 bg-white rounded opacity-60"></div>
+                          <div className="h-1 w-6 bg-white rounded opacity-90"></div>
+                        </div>
+                        <div className="flex space-x-1">
+                          <div className="h-1 w-3 bg-white rounded opacity-70"></div>
+                          <div className="h-1 w-5 bg-white rounded opacity-85"></div>
+                          <div className="h-1 w-2 bg-white rounded opacity-60"></div>
+                        </div>
+                        <div className="flex space-x-1">
+                          <div className="h-1 w-6 bg-white rounded opacity-90"></div>
+                          <div className="h-1 w-3 bg-white rounded opacity-70"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -274,7 +368,7 @@ export default function AboutPage() {
         </div>
 
         <section className="relative space-y-16">
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <GridWrapper>
               <div className="text-center text-sm font-medium text-indigo-600">
                 <span>More</span>
@@ -286,7 +380,7 @@ export default function AboutPage() {
                 Here&apos;s what sets me apart and makes me unique
               </h2>
             </GridWrapper>
-          </div>
+          </div> */}
 
           {/* About Grid */}
           <GridWrapper>

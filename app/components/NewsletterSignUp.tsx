@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
@@ -19,8 +19,8 @@ interface FormState {
 }
 
 export function NewsletterSignUp({
-  title = "Subscribe to my newsletter",
-  description = "A periodic update about my life, recent blog posts, how-tos, and discoveries.",
+  title = "Stay Connected with Teja",
+  description = "Get occasional updates from Teja on his latest AI/ML projects, technical achievements, and career milestones. Stay connected to follow his professional growth and impact in the field of Data Science and Artificial Intelligence.",
   buttonText = "Subscribe",
 }: NewsletterSignUpProps) {
   const [formState, setFormState] = useState<FormState>({
@@ -116,7 +116,7 @@ export function NewsletterSignUp({
                 <input
                   id="email"
                   type="email"
-                  placeholder="bobloblaw@gmail.com"
+                  placeholder="connect@teja.ai"
                   value={formState.email}
                   onChange={(e) =>
                     setFormState((prev) => ({ ...prev, email: e.target.value }))
@@ -136,9 +136,8 @@ export function NewsletterSignUp({
               <div className="min-h-[15px] md:min-h-[30px]">
                 {formState.message && (
                   <p
-                    className={`text-sm ${
-                      formState.isSuccess ? "text-indigo-300" : "text-rose-400"
-                    }`}
+                    className={`text-sm ${formState.isSuccess ? "text-indigo-300" : "text-rose-400"
+                      }`}
                   >
                     {formState.message}
                   </p>
@@ -146,8 +145,7 @@ export function NewsletterSignUp({
               </div>
             </div>
             <p className="text-base text-gray-300">
-              <span className="font-bold text-white">NO SPAM.</span> I never
-              send spam. You can unsubscribe at any time!
+              <span className="font-bold text-white">NO SPAM.</span>Only meaningful updates from Teja's professional journey. You can unsubscribe anytime.
             </p>
             <svg
               className="absolute -top-8 right-0 z-10 hidden lg:block"
@@ -331,3 +329,4 @@ export function NewsletterSignUp({
     </div>
   );
 }
+

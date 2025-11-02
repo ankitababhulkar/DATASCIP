@@ -14,9 +14,8 @@ const CalendarDay: React.FC<{ day: number | string; isHeader?: boolean }> = ({
 
   return (
     <div
-      className={`col-span-1 row-span-1 flex h-8 w-8 items-center justify-center ${
-        isHeader ? "" : "rounded"
-      } ${randomBgWhite}`}
+      className={`col-span-1 row-span-1 flex h-8 w-8 items-center justify-center ${isHeader ? "" : "rounded"
+        } ${randomBgWhite}`}
     >
       <span className={`font-medium ${isHeader ? "text-xs" : "text-sm"}`}>
         {day}
@@ -36,12 +35,6 @@ export function CalendarBento() {
     currentDate.getMonth() + 1,
     0,
   ).getDate();
-
-  const bookingLink = `https://cal.com/braydon-coyer-8ayx8q/30min?month=${currentYear}-${(
-    currentDate.getMonth() + 1
-  )
-    .toString()
-    .padStart(2, "0")}`;
 
   const renderCalendarDays = () => {
     let days: React.ReactNode[] = [
@@ -63,7 +56,7 @@ export function CalendarBento() {
   };
 
   return (
-    <BentoCard height="h-[220px]" linkTo={bookingLink}>
+    <BentoCard height="h-[220px]" linkTo="/contact">
       <div className="group grid h-full grid-cols-12 gap-5">
         <div className="col-span-5 text-balance md:col-span-5">
           <h2 className="mb-4 text-base font-medium">Book a call with me</h2>

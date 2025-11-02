@@ -7,32 +7,18 @@ import { useEffect, useState } from "react";
 type Direction = "left" | "right";
 
 export const PhotoGallery = ({
-  animationDelay = 0.5,
+  animationDelay = 0.1,
 }: {
   animationDelay?: number;
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
-    // First make the container visible with a fade-in
-    const visibilityTimer = setTimeout(() => {
-      setIsVisible(true);
-    }, animationDelay * 1000);
-
-    // Then start the photo animations after a short delay
-    const animationTimer = setTimeout(
-      () => {
-        setIsLoaded(true);
-      },
-      (animationDelay + 0.4) * 1000,
-    ); // Add 0.4s for the opacity transition
-
-    return () => {
-      clearTimeout(visibilityTimer);
-      clearTimeout(animationTimer);
-    };
-  }, [animationDelay]);
+    // Immediately show images without delay
+    setIsVisible(true);
+    setIsLoaded(true);
+  }, []);
 
   // Animation variants for the container
   const containerVariants = {
@@ -48,24 +34,25 @@ export const PhotoGallery = ({
 
   // Animation variants for each photo
   const photoVariants = {
-    hidden: (custom) => ({
-      x: 0,
-      y: 0,
-      rotate: 0,
-      scale: 1,
-      // Keep the same z-index throughout animation
-    }),
-    visible: (custom) => ({
+    hidden: (custom: any) => ({
       x: custom.x,
       y: custom.y,
-      rotate: 0, // No rotation
+      rotate: 0,
       scale: 1,
+      opacity: 1,
+    }),
+    visible: (custom: any) => ({
+      x: custom.x,
+      y: custom.y,
+      rotate: 0,
+      scale: 1,
+      opacity: 1,
       transition: {
         type: "spring",
         stiffness: 70,
         damping: 12,
         mass: 1,
-        delay: custom.order * 0.15, // Explicit delay based on order
+        delay: custom.order * 0.05, // Reduced delay
       },
     }),
   };
@@ -79,7 +66,7 @@ export const PhotoGallery = ({
       y: "15px",
       zIndex: 50, // Highest z-index (on top)
       direction: "left" as Direction,
-      src: "/your-image.jpg",
+      src: "/image_2.jpg",
     },
     {
       id: 2,
@@ -88,7 +75,7 @@ export const PhotoGallery = ({
       y: "32px",
       zIndex: 40,
       direction: "left" as Direction,
-      src: "/your-image.jpg",
+      src: "/image_1.jpg",
     },
     {
       id: 3,
@@ -97,7 +84,7 @@ export const PhotoGallery = ({
       y: "8px",
       zIndex: 30,
       direction: "right" as Direction,
-      src: "/your-image.jpg",
+      src: "/image_6.jpg",
     },
     {
       id: 4,
@@ -106,7 +93,7 @@ export const PhotoGallery = ({
       y: "22px",
       zIndex: 20,
       direction: "right" as Direction,
-      src: "/your-image.jpg",
+      src: "/image_8.jpg",
     },
     {
       id: 5,
@@ -115,7 +102,7 @@ export const PhotoGallery = ({
       y: "44px",
       zIndex: 10, // Lowest z-index (at bottom)
       direction: "left" as Direction,
-      src: "/your-image.jpg",
+      src: "/image_4.jpg",
     },
   ];
 
@@ -123,15 +110,15 @@ export const PhotoGallery = ({
     <div className="relative mb-8 hidden h-[350px] w-full items-center justify-center lg:flex">
       <motion.div
         className="relative mx-auto flex w-full max-w-6xl justify-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
       >
         <motion.div
           className="relative flex w-full justify-center"
           variants={containerVariants}
-          initial="hidden"
-          animate={isLoaded ? "visible" : "hidden"}
+          initial="visible"
+          animate="visible"
         >
           <div className="relative h-[220px] w-[220px]">
             {/* Render photos in reverse order so that higher z-index photos are rendered later in the DOM */}

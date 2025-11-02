@@ -33,7 +33,7 @@ export function SpeakingBento() {
               stiffness: 150,
             }}
           >
-            <SecondaryPhoto imgSrc="/c3_speaker_head.png" />
+            <SecondaryPhoto imgSrc="/braydon_headshot_2.jpeg" />
           </motion.span>
 
           <motion.span
@@ -62,16 +62,16 @@ export function SpeakingBento() {
               stiffness: 150,
             }}
           >
-            <SecondaryPhoto imgSrc="/braydon_speaking_head_3.jpeg" />
+            <SecondaryPhoto imgSrc="/braydon_headshot_3.jpg" />
           </motion.span>
         </div>
         {/* Gradient overlay */}
         <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-white"></div>
         <div className="absolute bottom-6 left-6 z-50 grid h-full grid-cols-2 grid-rows-2 items-end gap-8">
           <div className="col-1 row-start-2 text-balance">
-            <h2 className="mb-2 font-medium">Speaking</h2>
+            <h2 className="mb-2 font-medium">AI Research</h2>
             <p className="text-text-secondary">
-              Talks, podcasts, tutorials and more
+              Exploring data science, machine learning, and AI innovations.
             </p>
           </div>
         </div>
@@ -311,7 +311,7 @@ function PrimaryPhoto() {
 
       <img
         className="absolute left-1/2 top-1/2 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 transform rounded-full object-cover"
-        src="/your-image.jpeg"
+        src="/your-image.jpg"
         alt=""
       />
     </span>

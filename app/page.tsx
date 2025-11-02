@@ -1,11 +1,11 @@
 import { BgGradient } from "./components/BgGradient";
 import { NewsletterSignUp } from "./components/NewsletterSignUp";
 import { ChangelogBento } from "./components/ChangelogBento";
-import { SpeakingBento } from "./components/SpeakingBento";
+import { ContactBento } from "./components/ContactBento";
+import { CertificationBento } from "./components/CertificationBento";
 import { CommunityWallBento } from "./components/CommunityWallBento";
 import { CalendarBento } from "./components/CalendarBento";
 import { FeaturedBlogCard } from "./components/FeaturedBlogCard";
-import { ToolboxBento } from "./components/ToolboxBento";
 import { ConnectionsBento } from "./components/ConnectionsBento";
 import { AnimatedProfilePicture } from "./components/AnimatedProfilePicture";
 import { AnimatedText } from "./components/AnimatedText";
@@ -35,7 +35,7 @@ export default function Home() {
       summary: "A comprehensive guide to building scalable AI-powered data pipelines that can handle large datasets and complex transformations.",
       title: "Building AI-Powered Data Pipelines",
       publishedAt: "2024-10-15",
-      imageName: "ai-data-pipelines.jpg",
+      imageName: "javascript_generators.jpeg",
       categories: ["AI", "Data Engineering", "Machine Learning"],
       slug: "building-ai-powered-data-pipelines",
       draft: false,
@@ -47,7 +47,7 @@ export default function Home() {
       summary: "Dive deep into the cutting-edge world of generative AI and discover what the future holds for this revolutionary technology.",
       title: "The Future of Generative AI",
       publishedAt: "2024-10-10",
-      imageName: "generative-ai-future.jpg",
+      imageName: "blogfolio_v5.jpg",
       categories: ["Generative AI", "Technology", "Innovation"],
       slug: "future-of-generative-ai",
       draft: false,
@@ -59,7 +59,7 @@ export default function Home() {
       summary: "Master the fundamental best practices that separate successful data science projects from failed ones.",
       title: "Data Science Best Practices",
       publishedAt: "2024-10-05",
-      imageName: "data-science-practices.jpg",
+      imageName: "vscode_toolbox_2021.jpeg",
       categories: ["Data Science", "Best Practices", "Analytics"],
       slug: "data-science-best-practices",
       draft: false,
@@ -86,7 +86,7 @@ export default function Home() {
                 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]"
               >
                 Hey, I'm Teja!
-                <br /> Welcome to my AI world where Data meets Generative Intelligence!
+                <br /> where Data meets AI!
               </AnimatedText>
             </GridWrapper>
             <GridWrapper>
@@ -123,7 +123,7 @@ export default function Home() {
             </GridWrapper>
             <GridWrapper>
               <h2 className="mx-auto max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tight text-text-primary md:text-4xl">
-                Here&apos;s what sets me apart and makes me unique
+                Here&apos;s What makes me stand out in my field
               </h2>
             </GridWrapper>
           </div>
@@ -135,11 +135,11 @@ export default function Home() {
               </div>
 
               <div className="md:col-span-12 lg:col-span-7 lg:row-span-8">
-                <ConnectionsBento linkTo="/connections" />
+                <ConnectionsBento linkTo="https://www.linkedin.com/in/teja-chakilam/" />
               </div>
 
               <div className="md:col-span-7 md:row-start-1 lg:col-span-5 lg:row-span-7">
-                <ToolboxBento linkTo="/toolbox" />
+                <CertificationBento linkTo="/certifications" />
               </div>
 
               <div className="md:col-span-12 lg:col-span-7 lg:row-span-5">
@@ -163,7 +163,7 @@ export default function Home() {
             </GridWrapper>
             <GridWrapper>
               <h2 className="mx-auto max-w-lg text-center text-3xl font-medium leading-10 tracking-tighter text-text-primary md:text-4xl">
-                I like sharing my experiments && knowledge with others
+                I love sharing my learnings and insights with others
               </h2>
             </GridWrapper>
           </div>
@@ -198,7 +198,7 @@ export default function Home() {
         {/* My Site Section */}
         <section className="relative space-y-10 md:space-y-16">
           {/* <MySitePattern /> */}
-          <div className="space-y-4 text-balance">
+          {/* <div className="space-y-4 text-balance">
             <GridWrapper>
               <div className="text-center text-sm font-medium text-indigo-600">
                 <span>My Site</span>
@@ -206,20 +206,20 @@ export default function Home() {
             </GridWrapper>
             <GridWrapper>
               <h2 className="text-center text-3xl font-medium leading-10 tracking-tighter text-text-primary md:mx-auto md:max-w-lg md:text-4xl">
-                My site is a playful sandbox. Explore, experiment, && say hello
+                Explore freely, experiment boldly, connect anytime.
               </h2>
             </GridWrapper>
-          </div>
+          </div> */}
 
-          <GridWrapper>
+          {/* <GridWrapper>
             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
               <span className="col-span-1 h-[276px] sm:block md:hidden lg:block">
                 <ChangelogBento />
               </span>
-              <SpeakingBento />
+              <ContactBento />
               <CommunityWallBento />
             </div>
-          </GridWrapper>
+          </GridWrapper> */}
         </section>
 
         {/* Newsletter Section */}

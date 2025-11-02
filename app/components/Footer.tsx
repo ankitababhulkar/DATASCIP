@@ -20,28 +20,24 @@ const footerSections: FooterSection[] = [
       { href: "/", label: "Home" },
       { href: "/about", label: "About" },
       { href: "/projects", label: "Projects" },
-      { href: "/blog", label: "Blog" },
+      { href: "/blog", label: "Skills" },
     ],
   },
   {
-    title: "Specifics",
+    title: "Connect",
     links: [
-      { href: "/toolbox", label: "Toolbox" },
-      { href: "/speaking", label: "Speaking" },
-      {
-        href: "https://braydoncoyer.lemonsqueezy.com/",
-        label: "Products",
-        isExternal: true,
-      },
-      { href: "/community-wall", label: "Community Wall" },
+      { href: "/toolbox", label: "LinkedIn" },
+      { href: "/speaking", label: "GitHub" },
+
+      { href: "/community-wall", label: "Contact" },
     ],
   },
   {
     title: "Extra",
     links: [
-      { href: "/changelog", label: "Changelog" },
-      { href: "/connections", label: "Connections" },
-      { href: "/links", label: "Links" },
+      { href: "/changelog", label: "Data Stories" },
+      { href: "/connections", label: "Resume" },
+      { href: "/links", label: "Projects" },
     ],
   },
 ];
@@ -74,12 +70,11 @@ export function Footer(): JSX.Element {
                     />
                   </Link>
                   <p className="w-60 leading-5 text-gray-500">
-                    I&apos;m Braydon - a senior front-end developer, blogger and
-                    public speaker. Thanks for checking out my site!
+                    I&apos;m Teja - a Data Scientist, founder, and AI enthusiast. Thanks for stopping by!
                   </p>
                 </div>
                 <p className="mt-6 text-gray-500">
-                  © {new Date().getFullYear()} Braydon Coyer
+                  © {new Date().getFullYear()} Teja Chakilam
                 </p>
               </div>
               <div className="flex w-full items-end justify-end pr-16">

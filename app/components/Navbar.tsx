@@ -14,10 +14,10 @@ type NavigationLink = {
 const navigationLinks: readonly NavigationLink[] = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
-  { name: "Blog", link: "/blog" },
+  { name: "Skills", link: "/skills" },
   { name: "Projects", link: "/projects" },
-  { name: "Speaking", link: "/speaking" },
-  { name: "Toolbox", link: "/toolbox" },
+  { name: "Certifications", link: "/certifications" },
+  { name: "Contact", link: "/contact" },
 ] as const;
 
 const Navbar: React.FC = () => {
@@ -114,9 +114,8 @@ function MobileNav() {
               <Link
                 href={link}
                 key={link}
-                className={`rounded-lg px-3 py-2 text-xl/9 font-medium ${
-                  path === link ? "text-text-primary" : "text-text-secondary"
-                } data-active:bg-gray-950/5`}
+                className={`rounded-lg px-3 py-2 text-xl/9 font-medium ${path === link ? "text-text-primary" : "text-text-secondary"
+                  } data-active:bg-gray-950/5`}
                 aria-current={path === link ? "page" : undefined}
               >
                 {name}
