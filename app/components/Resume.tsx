@@ -13,12 +13,7 @@ const resumeData: ResumeData = {
             "I led AI-driven projects focusing on Generative AI models for financial data processing and automation. My role included developing intelligent systems leveraging NLP and LLMs, optimizing data pipelines, and integrating AI solutions into existing enterprise frameworks to enhance decision-making and customer experience.",
           ],
         },
-        // {
-        //   title: "Frontend Developer II",
-        //   description: [
-        //     "I joined LogicGate and immediately took charge of feature development on my team while also assisting other frontend developers in the organization.",
-        //   ],
-        // },
+
       ],
     },
     {
