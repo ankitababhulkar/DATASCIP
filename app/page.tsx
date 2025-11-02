@@ -13,6 +13,7 @@ import { PhotoGallery } from "./components/PhotoGallery";
 import { AboutMeBento } from "./components/AboutMeBento";
 import { AnimatedMobilePhotos } from "./components/AnimatedMobilePhotos";
 import { GridWrapper } from "./components/GridWrapper";
+import { WhyHireMeBento } from "./components/WhyHireMeBento";
 import clsx from "clsx";
 
 type Blog = {
@@ -193,6 +194,28 @@ export default function Home() {
               </ul>
             </GridWrapper>
           </div>
+        </section>
+
+        {/* Why Hire Me Section */}
+        <section className="relative space-y-10 md:space-y-16">
+          <div className="space-y-4">
+            <GridWrapper>
+              <div className="text-center text-sm font-medium text-purple-600">
+                <span>Why Hire Me</span>
+              </div>
+            </GridWrapper>
+            <GridWrapper>
+              <h2 className="mx-auto max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tight text-text-primary md:text-4xl">
+                See how I can drive innovation and results for your team
+              </h2>
+            </GridWrapper>
+          </div>
+
+          <GridWrapper>
+            <div className="mx-auto max-w-2xl">
+              <WhyHireMeBento />
+            </div>
+          </GridWrapper>
         </section>
 
         {/* My Site Section */}

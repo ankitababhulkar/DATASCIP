@@ -1,9 +1,7 @@
 ﻿"use client";
 
-import { useState, FormEvent } from "react";
-import { motion } from "framer-motion";
 import { GridWrapper } from "./GridWrapper";
-import { createContact } from "@/app/db/actions";
+import Link from "next/link";
 
 interface NewsletterSignUpProps {
   title?: string;
@@ -11,71 +9,11 @@ interface NewsletterSignUpProps {
   buttonText?: string;
 }
 
-interface FormState {
-  email: string;
-  message: string;
-  isSuccess: boolean;
-  isLoading: boolean;
-}
-
 export function NewsletterSignUp({
-  title = "Stay Connected with Teja",
-  description = "Get occasional updates from Teja on his latest AI/ML projects, technical achievements, and career milestones. Stay connected to follow his professional growth and impact in the field of Data Science and Artificial Intelligence.",
-  buttonText = "Subscribe",
+  title = "Let's Get In Touch",
+  description = "Let's get in touch and discuss how we can work together on your next project or opportunity.",
+  buttonText = "Contact Us",
 }: NewsletterSignUpProps) {
-  const [formState, setFormState] = useState<FormState>({
-    email: "",
-    message: "",
-    isSuccess: false,
-    isLoading: false,
-  });
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormState((prev) => ({
-      ...prev,
-      message: "",
-      isSuccess: false,
-      isLoading: true,
-    }));
-
-    if (!formState.email) {
-      setFormState((prev) => ({
-        ...prev,
-        message: "Please provide an email address.",
-        isLoading: false,
-      }));
-      return;
-    }
-
-    try {
-      const result = await createContact(formState.email);
-
-      if (result.success) {
-        setFormState((prev) => ({
-          ...prev,
-          message: "You're signed up!",
-          isSuccess: true,
-          email: "",
-        }));
-      } else {
-        setFormState((prev) => ({
-          ...prev,
-          message: "Something went wrong. :(",
-          isSuccess: false,
-        }));
-      }
-    } catch (error) {
-      setFormState((prev) => ({
-        ...prev,
-        message: "Something went wrong. :(",
-        isSuccess: false,
-      }));
-      console.error(error);
-    } finally {
-      setFormState((prev) => ({ ...prev, isLoading: false }));
-    }
-  };
 
   return (
     <div className="relative pb-16">
@@ -105,48 +43,13 @@ export function NewsletterSignUp({
             <p className="z-50 mb-8 max-w-[336px] text-base leading-8 text-gray-300 md:mb-12">
               {description}
             </p>
-            <div className="z-50 mb-4 space-y-4">
-              <form
-                onSubmit={handleSubmit}
-                className="relative md:inline-block"
-              >
-                <label htmlFor="email" className="sr-only">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="connect@teja.ai"
-                  value={formState.email}
-                  onChange={(e) =>
-                    setFormState((prev) => ({ ...prev, email: e.target.value }))
-                  }
-                  className="w-full rounded-full border border-gray-400 bg-transparent px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-100 focus:ring-offset-2 focus:ring-offset-dark-primary md:w-[425px]"
-                  disabled={formState.isLoading}
-                />
-                <button
-                  type="submit"
-                  className="group absolute right-1 top-1 isolate inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-slate-100 px-4 py-2.5 text-left text-sm font-medium text-slate-900 shadow-[0_1px_theme(colors.white/0.07)_inset,0_1px_3px_theme(colors.gray.900/0.2)] ring-1 ring-white transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)] before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-white/20 before:opacity-50 before:transition-opacity before:duration-300 before:ease-[cubic-bezier(0.4,0.36,0,1)] after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-full after:bg-gradient-to-b after:from-white/10 after:from-[46%] after:to-[54%] after:mix-blend-overlay hover:before:opacity-100"
-                  disabled={formState.isLoading}
-                >
-                  {formState.isLoading ? "Loading..." : buttonText}
+            <div className="z-50 mb-4">
+              <Link href="/contact">
+                <button className="group isolate inline-flex h-[44px] items-center justify-center overflow-hidden rounded-full bg-slate-100 px-6 py-2.5 text-left text-sm font-medium text-slate-900 shadow-[0_1px_theme(colors.white/0.07)_inset,0_1px_3px_theme(colors.gray.900/0.2)] ring-1 ring-white transition duration-300 ease-[cubic-bezier(0.4,0.36,0,1)] before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-white/20 before:opacity-50 before:transition-opacity before:duration-300 before:ease-[cubic-bezier(0.4,0.36,0,1)] after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-full after:bg-gradient-to-b after:from-white/10 after:from-[46%] after:to-[54%] after:mix-blend-overlay hover:before:opacity-100">
+                  {buttonText}
                 </button>
-              </form>
-              {/* Set minimum height to prevent layout shift */}
-              <div className="min-h-[15px] md:min-h-[30px]">
-                {formState.message && (
-                  <p
-                    className={`text-sm ${formState.isSuccess ? "text-indigo-300" : "text-rose-400"
-                      }`}
-                  >
-                    {formState.message}
-                  </p>
-                )}
-              </div>
+              </Link>
             </div>
-            <p className="text-base text-gray-300">
-              <span className="font-bold text-white">NO SPAM.</span>Only meaningful updates from Teja's professional journey. You can unsubscribe anytime.
-            </p>
             <svg
               className="absolute -top-8 right-0 z-10 hidden lg:block"
               width="453"
@@ -206,7 +109,7 @@ export function NewsletterSignUp({
                     result="effect1_innerShadow_185_3161"
                   />
                 </filter>
-                <motion.linearGradient
+                <linearGradient
                   id="paint0_linear_185_3161"
                   x1="250.5"
                   y1="119.845"
@@ -214,22 +117,10 @@ export function NewsletterSignUp({
                   y2="501"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <motion.stop
-                    animate={{
-                      stopColor: formState.isSuccess ? "#4f46e5" : "#4B4B4F",
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  <motion.stop
-                    offset="1"
-                    animate={{
-                      stopColor: formState.isSuccess ? "#818cf8" : "#3C3C3F",
-                      stopOpacity: formState.isSuccess ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </motion.linearGradient>
-                <motion.linearGradient
+                  <stop stopColor="#4B4B4F" />
+                  <stop offset="1" stopColor="#3C3C3F" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient
                   id="paint1_linear_185_3161"
                   x1="236.758"
                   y1="59.688"
@@ -237,20 +128,9 @@ export function NewsletterSignUp({
                   y2="418.249"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <motion.stop
-                    animate={{
-                      stopColor: formState.isSuccess ? "#4f46e5" : "#4B4B4F",
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  <motion.stop
-                    offset="1"
-                    animate={{
-                      stopColor: formState.isSuccess ? "#818cf8" : "#3C3C3F",
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </motion.linearGradient>
+                  <stop stopColor="#4B4B4F" />
+                  <stop offset="1" stopColor="#3C3C3F" />
+                </linearGradient>
               </defs>
             </svg>
           </div>

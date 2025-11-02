@@ -20,24 +20,24 @@ const footerSections: FooterSection[] = [
       { href: "/", label: "Home" },
       { href: "/about", label: "About" },
       { href: "/projects", label: "Projects" },
-      { href: "/blog", label: "Skills" },
+      { href: "/skills", label: "Skills" },
     ],
   },
   {
     title: "Connect",
     links: [
-      { href: "/toolbox", label: "LinkedIn" },
-      { href: "/speaking", label: "GitHub" },
+      { href: "https://www.linkedin.com/in/teja-chakilam/", label: "LinkedIn" },
 
-      { href: "/community-wall", label: "Contact" },
+
+      { href: "/contact", label: "Contact" },
     ],
   },
   {
     title: "Extra",
     links: [
-      { href: "/changelog", label: "Data Stories" },
-      { href: "/connections", label: "Resume" },
-      { href: "/links", label: "Projects" },
+
+      { href: "/contact", label: "Resume" },
+      { href: "/projects", label: "Projects" },
     ],
   },
 ];
@@ -77,9 +77,7 @@ export function Footer(): JSX.Element {
                   © {new Date().getFullYear()} Teja Chakilam
                 </p>
               </div>
-              <div className="flex w-full items-end justify-end pr-16">
-                <SocialPill />
-              </div>
+
             </div>
             <div className="flex w-full flex-col items-end py-6 text-xs lg:pl-16">
               <div className="ld:space-x-0 flex w-full justify-between md:justify-start md:space-x-36 lg:justify-between">

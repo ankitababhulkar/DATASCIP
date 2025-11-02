@@ -58,7 +58,7 @@ const resumeData: ResumeData = {
       ],
     },
   ],
-  avatarUrl: "/braydon_headshot_1.jpeg",
+  avatarUrl: "/your-image.jpg",
 };
 
 export function Resume() {

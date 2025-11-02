@@ -165,7 +165,7 @@ export function ConnectionsBento({
                 sizeClass="w-10 h-10"
               />
             </a>
-            <SocialIconCircle
+            {/* <SocialIconCircle
               icon="github"
               sizeClass="w-12 h-12"
               className="absolute bottom-20 left-14 md:left-52"
@@ -174,7 +174,7 @@ export function ConnectionsBento({
               icon="twitter"
               sizeClass="w-14 h-14"
               className="absolute right-16 top-4 md:right-52"
-            />
+            /> */}
             <SocialIconCircle
               icon="email"
               sizeClass="w-11 h-11"
