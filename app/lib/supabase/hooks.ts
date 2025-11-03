@@ -20,7 +20,12 @@ export function useSupabaseAuth() {
         const { data: { session }, error } = await supabase.auth.getSession();
         
         if (error) {
-          supabaseErrorHandler.handleAuthError(error);
+          // Check if it's an AuthError before passing to handleAuthError
+          if ('code' in error && '__isAuthError' in error) {
+            supabaseErrorHandler.handleAuthError(error);
+          } else {
+            supabaseErrorHandler.logError(error, 'useSupabaseAuth - getInitialSession');
+          }
           setError(error.message);
         } else if (mounted) {
           setSession(session);
@@ -41,7 +46,7 @@ export function useSupabaseAuth() {
     getInitialSession();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
+      async (_event, session) => {
         if (mounted) {
           setSession(session);
           setUser(session?.user ?? null);
@@ -64,7 +69,12 @@ export function useSupabaseAuth() {
     const { error } = await supabase.auth.signOut();
     
     if (error) {
-      supabaseErrorHandler.handleAuthError(error);
+      // Check if it's an AuthError before passing to handleAuthError
+      if ('code' in error && '__isAuthError' in error) {
+        supabaseErrorHandler.handleAuthError(error);
+      } else {
+        supabaseErrorHandler.logError(error, 'useSupabaseAuth - signOut');
+      }
       setError(error.message);
     }
     
@@ -107,7 +117,7 @@ export function useSupabaseQuery<T>(
       if (queryError) {
         setError(queryError.message || 'Query failed');
       } else {
-        setData(result);
+        setData(result?.data ?? null);
       }
 
       setLoading(false);
@@ -132,7 +142,7 @@ export function useSupabaseQuery<T>(
     if (queryError) {
       setError(queryError.message || 'Query failed');
     } else {
-      setData(result);
+      setData(result?.data ?? null);
     }
 
     setLoading(false);

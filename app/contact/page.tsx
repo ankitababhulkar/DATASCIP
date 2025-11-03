@@ -86,10 +86,10 @@ export default function ContactPage() {
                             <span>Get In Touch</span>
                         </div>
                         <h1 className="mx-auto max-w-2xl text-balance text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]">
-                            Let's Build Something Amazing Together
+                            Let&apos;s Build Something Amazing Together
                         </h1>
                         <p className="mx-auto max-w-2xl text-lg leading-8 text-text-secondary">
-                            Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear from you. Let's discuss how we can leverage data and AI to solve real-world problems.
+                            Whether you have a project in mind, want to collaborate, or just want to say hello, I&apos;d love to hear from you. Let&apos;s discuss how we can leverage data and AI to solve real-world problems.
                         </p>
                     </div>
                 </GridWrapper>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                                         Send me a message
                                     </h2>
                                     <p className="text-text-secondary">
-                                        Fill out the form below and I'll get back to you as soon as possible.
+                                        Fill out the form below and I&apos;ll get back to you as soon as possible.
                                     </p>
                                 </div>
 
@@ -222,7 +222,7 @@ export default function ContactPage() {
                                     {submitStatus === "success" && (
                                         <div className="p-4 bg-green-100 border border-green-200 rounded-lg">
                                             <p className="text-green-800 text-sm">
-                                                ✅ Message sent successfully! I'll get back to you soon.
+                                                ✅ Message sent successfully! I&apos;ll get back to you soon.
                                             </p>
                                         </div>
                                     )}
@@ -233,7 +233,7 @@ export default function ContactPage() {
                             <div className="space-y-8">
                                 <div>
                                     <h3 className="text-2xl font-medium text-text-primary mb-4">
-                                        Let's collaborate
+                                        Let&apos;s collaborate
                                     </h3>
                                     <p className="text-text-secondary leading-relaxed mb-6">
                                         I’m a Data Scientist and AI/ML Engineer with 5+ years of experience delivering impactful AI solutions across finance, healthcare, insurance, and retail. For me, this isn’t just a job  it’s a responsibility to create real business value through data.

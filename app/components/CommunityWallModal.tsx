@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import createSupabaseServerClient from "../lib/supabase/server";
 import { CreateCommunityNoteBuilder } from "./CreateCommunityNoteBuilder";
 import { SignInWithGitHub } from "./SignInWithGitHub";
+import { User } from "@supabase/supabase-js";
 
 // Move the server action outside the component and mark it with 'use server'
 async function handleCreateCommunityNote(formData: FormData) {
@@ -49,12 +50,12 @@ async function handleCreateCommunityNote(formData: FormData) {
 }
 
 export async function CommunityWallModal() {
-  let user = null;
-  
+  let user: User | null = null;
+
   try {
     const supabase = await createSupabaseServerClient();
     const { data: { user: authUser }, error } = await supabase.auth.getUser();
-    
+
     if (error) {
       console.warn('Failed to get user in CommunityWallModal:', error);
     } else {

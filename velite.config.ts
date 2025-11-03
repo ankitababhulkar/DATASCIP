@@ -56,7 +56,7 @@ export default defineConfig({
   collections: { posts, changelogItems },
   mdx: {
     rehypePlugins: [
-      [rehypeRaw, { passThrough: ['mdxJsxFlowElement', 'mdxJsxTextElement'] }]
+      [rehypeRaw, { passThrough: ['mdxJsxFlowElement', 'mdxJsxTextElement', 'mdxTextExpression', 'mdxFlowExpression'] }]
     ],
     remarkPlugins: [],
   },

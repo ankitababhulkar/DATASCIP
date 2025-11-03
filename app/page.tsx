@@ -86,7 +86,7 @@ export default function Home() {
                 delay={HEADING_DELAY}
                 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]"
               >
-                Hey, I'm Teja!
+                Hey, I&apos;m Teja!
                 <br /> where Data meets AI!
               </AnimatedText>
             </GridWrapper>

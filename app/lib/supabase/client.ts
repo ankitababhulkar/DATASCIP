@@ -29,6 +29,8 @@ function useSupabaseClient() {
           signInWithOAuth: () => Promise.resolve({ error: new Error('Supabase client unavailable') }),
           getUser: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase client unavailable') }),
           getSession: () => Promise.resolve({ data: { session: null }, error: new Error('Supabase client unavailable') }),
+          onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+          signOut: () => Promise.resolve({ error: new Error('Supabase client unavailable') }),
         },
         from: () => ({
           insert: () => Promise.resolve({ error: new Error('Supabase client unavailable') }),

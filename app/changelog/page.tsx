@@ -1,6 +1,6 @@
 import { MDXContent } from "@/app/components/mdx";
 import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
-import { fetchAndSortPosts } from "@/app/lib/utils";
+import { fetchAndSortChangelogPosts } from "@/app/lib/utils";
 import { GridWrapper } from "@/app/components/GridWrapper";
 
 export default async function ChangelogPage() {
